@@ -1,0 +1,19 @@
+server:
+  port: 500
+spring:
+  application:
+    name: amqp-platform
+  rabbitmq:
+    host: 192.168.3.177
+    #    失败确认模式
+    publisher-confirm-type: correlated
+    #    发送成功返回
+    publisher-returns: true
+    template:
+      mandatory: true
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/platform-queue-message?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: root
